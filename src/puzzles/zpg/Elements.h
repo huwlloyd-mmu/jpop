@@ -1,0 +1,15 @@
+#pragma once
+
+enum class Elements
+{
+	RAKED_SQUARE,
+	UNRAKED_SQUARE,
+	ROCK,
+	STATUE,
+	YELLOW_LEAF,
+	ORANGE_LEAF,
+	RED_LEAF,
+	PERIMETER,
+	USED_PERIMETER,
+	INACTIVE
+};

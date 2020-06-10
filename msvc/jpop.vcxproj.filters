@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\puzzlesolver.cpp" />
+    <ClCompile Include="..\src\solvers\backtracking\backtracking.cpp">
+      <Filter>solvers\backtracking</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\solvers\ga\BitmapChromosome.cpp">
+      <Filter>solvers\GA</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\solvers\ga\IntChromosome.cpp">
+      <Filter>solvers\GA</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\solvers\ga\puzzlegeneticalgorithm.cpp">
+      <Filter>solvers\GA</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\solvers\aco\puzzleant.cpp">
+      <Filter>solvers\ACO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\solvers\aco\puzzleantsystem.cpp">
+      <Filter>solvers\ACO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\solvers\sa\simulatedannealing.cpp">
+      <Filter>solvers\SA</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\solvers\random\RandomSearch.cpp">
+      <Filter>solvers\Random</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\sudoku\board.cpp">
+      <Filter>puzzles\Sudoku</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\sudoku\sudokusimulator.cpp">
+      <Filter>puzzles\Sudoku</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\zpg\zpgboard.cpp">
+      <Filter>puzzles\Zen Puzzle Garden</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\zpg\zpgsimulator.cpp">
+      <Filter>puzzles\Zen Puzzle Garden</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\hashiwokakero\hashiboard.cpp">
+      <Filter>puzzles\Hashiwokakero</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\hashiwokakero\hashisimulator.cpp">
+      <Filter>puzzles\Hashiwokakero</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\futoshiki\fboard.cpp">
+      <Filter>puzzles\Futoshiki</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\futoshiki\futoshikisimulator.cpp">
+      <Filter>puzzles\Futoshiki</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\nurikabe\nkboard.cpp">
+      <Filter>puzzles\Nurikabe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\nurikabe\nurikabesimulator.cpp">
+      <Filter>puzzles\Nurikabe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\slitherlink\slboard.cpp">
+      <Filter>puzzles\Slitherlink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\slitherlink\slitherlinksimulator.cpp">
+      <Filter>puzzles\Slitherlink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\zpg\Tile.cpp">
+      <Filter>puzzles\Zen Puzzle Garden</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\analysis\PrescientSolver.cpp">
+      <Filter>analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\puzzles\zpg\PerimeterTile.cpp">
+      <Filter>puzzles\Zen Puzzle Garden</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SpookyV2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\arguments.h" />
+    <ClInclude Include="..\src\simulator.h" />
+    <ClInclude Include="..\src\Solver.h" />
+    <ClInclude Include="..\src\solvers\backtracking\SimulatorStack.h" />
+    <ClInclude Include="..\src\state.h" />
+    <ClInclude Include="..\src\timer.h" />
+    <ClInclude Include="..\src\solutionstore.h" />
+    <ClInclude Include="..\src\solvers\backtracking\backtracking.h">
+      <Filter>solvers\backtracking</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\solvers\ga\BitmapChromosome.h">
+      <Filter>solvers\GA</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\solvers\ga\chromosome.h">
+      <Filter>solvers\GA</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\solvers\ga\IntChromosome.h">
+      <Filter>solvers\GA</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\solvers\ga\puzzlegeneticalgorithm.h">
+      <Filter>solvers\GA</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\solvers\aco\puzzleant.h">
+      <Filter>solvers\ACO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\solvers\aco\puzzleantsystem.h">
+      <Filter>solvers\ACO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\solvers\sa\simulatedannealing.h">
+      <Filter>solvers\SA</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\solvers\random\RandomSearch.h">
+      <Filter>solvers\Random</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\sudoku\board.h">
+      <Filter>puzzles\Sudoku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\sudoku\sudokusimulator.h">
+      <Filter>puzzles\Sudoku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\sudoku\valueset.h">
+      <Filter>puzzles\Sudoku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\zpg\Elements.h">
+      <Filter>puzzles\Zen Puzzle Garden</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\zpg\Directions.h">
+      <Filter>puzzles\Zen Puzzle Garden</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\zpg\CoOrdinates.h">
+      <Filter>puzzles\Zen Puzzle Garden</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\zpg\zpgboard.h">
+      <Filter>puzzles\Zen Puzzle Garden</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\zpg\zpgsimulator.h">
+      <Filter>puzzles\Zen Puzzle Garden</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\hashiwokakero\hashiboard.h">
+      <Filter>puzzles\Hashiwokakero</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\hashiwokakero\hashisimulator.h">
+      <Filter>puzzles\Hashiwokakero</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\nurikabe\nkboard.h">
+      <Filter>puzzles\Nurikabe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\nurikabe\nurikabesimulator.h">
+      <Filter>puzzles\Nurikabe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\zpg\Tile.h">
+      <Filter>puzzles\Zen Puzzle Garden</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\futoshiki\fboard.h">
+      <Filter>puzzles\Futoshiki</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\futoshiki\futoshikisimulator.h">
+      <Filter>puzzles\Futoshiki</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\slitherlink\slboard.h">
+      <Filter>puzzles\Slitherlink</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\slitherlink\slitherlinksimulator.h">
+      <Filter>puzzles\Slitherlink</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InstrumentedSimulator.h" />
+    <ClInclude Include="..\src\analysis\PrescientSolver.h">
+      <Filter>analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\puzzles\zpg\PerimeterTile.h">
+      <Filter>puzzles\Zen Puzzle Garden</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="puzzles">
+      <UniqueIdentifier>{264c34b6-a463-42c2-8642-09570c1ff95f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="solvers">
+      <UniqueIdentifier>{e9070ebb-bd54-410b-bc9c-2fe516cc763b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="solvers\backtracking">
+      <UniqueIdentifier>{7b5d4331-1d38-454d-abb9-d431406fed83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="solvers\GA">
+      <UniqueIdentifier>{538ef74a-f5f1-4315-9372-da05ca64ca26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="solvers\ACO">
+      <UniqueIdentifier>{6acb5ebd-d759-4202-95ce-88153f2b973a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="solvers\SA">
+      <UniqueIdentifier>{580acf67-9d27-4acb-b640-60759c316e27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="solvers\Random">
+      <UniqueIdentifier>{da4b7ec8-114d-49f8-8af4-3b936941f507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="puzzles\Futoshiki">
+      <UniqueIdentifier>{423aa0ff-9848-43f4-9c1c-2675bcc76b20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="puzzles\Hashiwokakero">
+      <UniqueIdentifier>{b656a0a7-363b-4e2c-85f2-aabb70339c57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="puzzles\Slitherlink">
+      <UniqueIdentifier>{16fdc9ec-803c-49df-b53b-8f59253e5070}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="puzzles\Sudoku">
+      <UniqueIdentifier>{4fa09de9-5f2a-4e51-b903-5db53c6880c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="puzzles\Nurikabe">
+      <UniqueIdentifier>{8749b238-833c-4791-92c2-0abd3c3ab35a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="puzzles\Zen Puzzle Garden">
+      <UniqueIdentifier>{8ced4dd6-51d9-44ec-a7e2-cc4f3109072f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="analysis">
+      <UniqueIdentifier>{109803e8-45ea-4ce8-b48e-531d8c496cbe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
