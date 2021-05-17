@@ -15,6 +15,8 @@
 #include "puzzles/zpg/zpgsimulator.h"
 #include "puzzles/slitherlink/slboard.h"
 #include "puzzles/slitherlink/slitherlinksimulator.h"
+#include "puzzles/binpacking/binpacking.h"
+#include "puzzles/synthetic/synthetic.h"
 #include "solutionstore.h"
 #include "InstrumentedSimulator.h"
 #include "analysis/PrescientSolver.h"
@@ -113,6 +115,57 @@ Simulator *InitHashi(Arguments &a)
 
 }
 
+Simulator* InitSynthetic( Arguments &a )
+{
+	int n = a.GetArg(string("synth_n"), 20);
+	int m = a.GetArg(string("synth_m"), 2);
+	pher0 = 1.0f / (float)n;
+	return (Simulator*)(new SyntheticSimulator(n, m));
+}
+
+Simulator* InitBinPacking( Arguments &a)
+{
+	vector<string> names;
+	vector<uint32_t> bestKnown;
+	vector<uint32_t> binSizes;
+	vector<vector<uint32_t>> objectSizes;
+
+	// read the file
+	string fileName = a.GetArg(string("file"), string());
+	ifstream infile(fileName);
+	if (!infile.is_open())
+	{
+		cerr << "could not open file " << fileName << endl;
+	}
+	// read all the instances
+	uint32_t nInst;
+	infile >> nInst;
+	for (uint32_t i = 0; i < nInst; i++)
+	{
+		string name;
+		uint32_t numObj, binSize, best;
+		infile >> name;
+		infile >> binSize >> numObj >> best;
+		names.push_back(name);
+		binSizes.push_back(binSize);
+		bestKnown.push_back(best);
+		vector<uint32_t> sizes;
+		for (uint32_t j = 0; j < numObj; j++)
+		{
+			uint32_t s;
+			infile >> s;
+			sizes.push_back(s);
+		}
+		objectSizes.push_back(sizes);
+	}
+
+	uint32_t instanceIndex = a.GetArg(string("instance_num"), 0);
+
+	BinPackingSimulator* bps = new BinPackingSimulator(objectSizes[instanceIndex], binSizes[instanceIndex], names[instanceIndex], bestKnown[instanceIndex]);
+	pher0 = 0.01f / objectSizes[instanceIndex].size();
+	return (Simulator*)bps;
+}
+
 int main(int argc, char *argv[])
 {
 	Arguments a(argc, argv);
@@ -131,6 +184,10 @@ int main(int argc, char *argv[])
 		sim = InitZPG(a);
 	if (puzzleType == "slitherlink")
 		sim = InitSlitherlink(a);
+	if (puzzleType == "binpacking")
+		sim = InitBinPacking(a);
+	if (puzzleType == "synthetic")
+		sim = InitSynthetic(a);
 
 	int timeOutSecs = a.GetArg("timeout", 0);
 	int maxEvals = a.GetArg("evaluations", 0);
@@ -208,8 +265,8 @@ int main(int argc, char *argv[])
 	string instrument_outfile = a.GetArg("instrumentfile", std::string());
 
 	// only instrument stochastic solvers - doesn't make sense for backtracking
-	if (solverType == "bs")
-		instrumented = false;
+	//if (solverType == "bs")
+	//	instrumented = false;
 
 	SolutionStore* solStore = nullptr;
 	if (instrumented)
@@ -228,11 +285,11 @@ int main(int argc, char *argv[])
 		cout << board.AsString() << endl;
 	}
 */
+
 	int bestVal = as->Solve(sim, (float)timeOutSecs, maxEvals);
 	int numEvals = as->GetNumEvals();
 	solution = as->GetSolution();
 	solTime = as->GetSolutionTime();
-
 	if (instrumented)
 	{
 		int numUnique = solStore->GetNumUnique();
