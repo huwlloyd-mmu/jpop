@@ -23,16 +23,17 @@ public:
 	void PushChoice(unsigned int choice)
 	{
 		choice_stack.push_back(choice);
-		sim->SetChoice(choice);
+		sim->StartRun(startVal);
+		std::vector<unsigned int> choices;
+		for (unsigned int choice : choice_stack)
+		{
+			sim->GetChoices(choices);
+			sim->SetChoice(choice);
+		}
 	}
 	void PopChoice(void)
 	{
 		choice_stack.pop_back();
-		sim->StartRun(startVal);
-		for (unsigned int choice : choice_stack)
-		{
-			sim->SetChoice(choice);
-		}
 	}
 	int GetCost(void) { return sim->GetCost(); }
 	std::string StateAsString() { return sim->StateAsString(); }

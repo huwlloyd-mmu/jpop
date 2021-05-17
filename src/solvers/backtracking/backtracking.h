@@ -23,8 +23,4 @@ public:
 	virtual int Solve(Simulator* sim, float maxTime, int maxEvals ) override;
 	virtual float GetSolutionTime() override { return solTime; }
 	virtual std::string GetSolution() override { return bestSol; }
-
-	// not yet implemented - not used by this solver
-	// better architecturing solution than this?
-	inline float random() { return 0.0f; }
 };

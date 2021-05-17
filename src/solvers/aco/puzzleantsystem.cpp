@@ -99,8 +99,8 @@ int PuzzleAntSystem::Solve( Simulator *sim, float maxTime, int maxEvals )
 			bool limited = LimitsExceeded();
 			if (chatter)
 			{
-				std::cout << "iter: " << iter << " time: " << solTime << " evals: " << evals << " best: " << bestVal << std::endl;
-				}
+				std::cout << "iter: " << iter << " time: " << solTime << " evals: " << evals << " best: " << curBestAnt << std::endl;
+			}
 			if ( limited)
 			{
 				break;
@@ -108,6 +108,6 @@ int PuzzleAntSystem::Solve( Simulator *sim, float maxTime, int maxEvals )
 		}
 	}
 	ClearPheromone();
-	return bestVal;
+	return curBestAnt;
 }
 

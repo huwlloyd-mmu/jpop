@@ -25,7 +25,6 @@ void HashiSimulator::GetChoices(std::vector<unsigned int>& choices)
 		// finished, return no choices
 		return;
 	}
-	++numEdgesVisited;
 	if (curBoard.GetEdgeFixed(edgeOrder[curEdge]))
 	{
 		// return only the fixed value of this edge
@@ -41,12 +40,6 @@ void HashiSimulator::GetChoices(std::vector<unsigned int>& choices)
 		}
 //		std::random_shuffle(choices.begin(), choices.end());
 	}
-	++curEdge;
-	if (curEdge == curBoard.GetNumEdgeSites())
-	{
-		// wrap around
-		curEdge = 0;
-	}
 	return;
 }
 
@@ -55,6 +48,13 @@ void HashiSimulator::SetChoice(unsigned int choice)
 	int iEdge = choice / 3;
 	int iVal = choice % 3;
 	curBoard.SetEdgeSite(iEdge, iVal);
+	++numEdgesVisited;
+	++curEdge;
+	if (curEdge == curBoard.GetNumEdgeSites())
+	{
+		// wrap around
+		curEdge = 0;
+	}
 }
 
 int HashiSimulator::GetCost(void)

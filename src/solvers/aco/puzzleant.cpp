@@ -66,6 +66,7 @@ bool PuzzleAnt::StepSolution()
 			}
 			thisChoice = choices[iSel];
 		}
+
 		simulator->SetChoice( thisChoice );
 		tour.push_back(thisChoice);
 		parent->LocalPheromoneUpdate(thisChoice);
